@@ -37,11 +37,20 @@ public class ATMMachine : MonoBehaviour
 
     public void Withdraw()
     {
-        float withdrawalAmount = CalculatePercentage(accountBalance,precent);
-        accountBalance -= withdrawalAmount;
-        CurrencySystem.instance.coins += Mathf.RoundToInt(withdrawalAmount);
-        CurrencySystem.instance.UpdteCoinsText();
-        UpdateBalanceText();
+        if(accountBalance > 0)
+        {
+            float withdrawalAmount = CalculatePercentage(accountBalance, precent);
+            accountBalance -= withdrawalAmount;
+            CurrencySystem.instance.coins += Mathf.RoundToInt(withdrawalAmount);
+            CurrencySystem.instance.UpdteCoinsText();
+            UpdateBalanceText();
+        }
+        else
+        {
+            withdrawBtn.interactable = false;
+            print("U Dont Have enough Money");
+        }
+        
     }
 
     public void Deposit()

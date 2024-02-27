@@ -28,10 +28,4 @@ public class CurrencySystem : MonoBehaviour
     {
         coinUI.text = coins.ToString();
     }
-    public void AddCoins()
-    {
-        coins++;
-        coinUI.text = coins.ToString();
-       // CheckPurchaseable();
-    }
 }

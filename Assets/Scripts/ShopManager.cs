@@ -12,7 +12,6 @@ public class ShopManager : MonoBehaviour
     public ShopPanel[] shopPanelsData;
     public Button[] purchaseBtns;
 
-    // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < shopItems.Length; i++)
@@ -25,7 +24,6 @@ public class ShopManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
     }
@@ -55,7 +53,6 @@ public class ShopManager : MonoBehaviour
                                     CurrencySystem.instance.coins.ToString();
 
             CheckPurchaseable();
-            //Unlock Item.
         }
     }
 
